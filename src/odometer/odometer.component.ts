@@ -6,17 +6,11 @@
 
 import * as _ from 'lodash';
 import { Component, ViewEncapsulation, Input, OnInit, OnDestroy, OnChanges, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { OdometerModel } from './odometer.model';
 import { Ng2OdometerConfig, Ng2OdometerConfigModel } from './odometer.config';
 import {
-    CAR_THEME,
-    DEFAULT_THEME,
-    DIGITAL_THEME,
-    MINIMAL_THEME,
-    PLAZA_THEME,
-    SLOT_MACHINE_THEME,
     TRAIN_STATION_THEME,
  } from './themes';
 
@@ -28,12 +22,6 @@ const Odometer = require('odometer');
     selector: 'ng2-odometer',
     encapsulation: ViewEncapsulation.None,
     styles: [
-        CAR_THEME,
-        DEFAULT_THEME,
-        DIGITAL_THEME,
-        MINIMAL_THEME,
-        PLAZA_THEME,
-        SLOT_MACHINE_THEME,
         TRAIN_STATION_THEME,
         `
             .odometer,
@@ -64,21 +52,12 @@ export class Ng2OdometerComponent implements OnInit, OnDestroy, OnChanges, After
     // Individual configuration attributes
     @Input() animation: string = undefined;
     @Input() format: string = undefined;
-    @Input() theme: string = undefined;
     @Input() value: number = undefined;
     @Input() duration: number = undefined;
     @Input() auto: boolean = undefined;
 
-    // Available themes
-    private themes: Array<string> = [
-        'car',
-        'default',
-        'digital',
-        'minimal',
-        'plaza',
-        'slot-machine',
-        'train-station'
-    ];
+    // only train-station them is supported/allowed.
+    private THEME: string = 'train-station';
 
     // Start Odometer
     private initOdometer() {
@@ -91,7 +70,7 @@ export class Ng2OdometerComponent implements OnInit, OnDestroy, OnChanges, After
                 value: this.config.value,
                 duration: this.config.duration,
                 format: this.config.format,
-                theme: this.config.theme,
+                theme: this.THEME,
             });
 
             if (!_.isUndefined(this.number) && this.config.auto) {
@@ -113,11 +92,6 @@ export class Ng2OdometerComponent implements OnInit, OnDestroy, OnChanges, After
             this.config.format = this.format;
         }
 
-        // Theme
-        if (!_.isUndefined(this.theme)) {
-            this.config.theme = !_.includes(this.themes, this.theme) ? 'default' : this.theme;
-        }
-
         // Value
         if (!_.isUndefined(this.value)) {
             this.config.value = this.value;
@@ -131,12 +105,6 @@ export class Ng2OdometerComponent implements OnInit, OnDestroy, OnChanges, After
         // Auto
         if (!_.isUndefined(this.auto)) {
             this.config.auto = this.auto;
-        }
-
-        // Validate theme. If not part of the
-        // available themes array, use the default
-        if (!_.includes(this.themes, this.config.theme)) {
-            this.config.theme = 'default';
         }
     }
 

@@ -3,7 +3,6 @@
  */
 
 export const TRAIN_STATION_THEME = `
-    @import url("//fonts.googleapis.com/css?family=Economica");
     .odometer.odometer-auto-theme,
     .odometer.odometer-theme-train-station {
         display: inline-block;
@@ -99,7 +98,7 @@ export const TRAIN_STATION_THEME = `
     }
     .odometer.odometer-auto-theme,
     .odometer.odometer-theme-train-station {
-        font-family: "Economica", sans-serif;
+        font-family: Gisha, Verdana, sans-serif;
     }
     .odometer.odometer-auto-theme .odometer-digit,
     .odometer.odometer-theme-train-station .odometer-digit {

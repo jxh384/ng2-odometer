@@ -1,9 +1,9 @@
 {
-  "name": "ng2-odometer",
-  "description": "Odometer for Angular2",
+  "name": "ng2-odometer-tiny",
+  "description": "Odometer for Angular2 - Only train-station theme is supported; also not downloading fonts from google",
   "author": "Jose Andres <jmandreslopez@gmail.com>",
   "license": "MIT",
-  "version": "1.1.3",
+  "version": "0.0.1",
   "keywords": [
     "hubspot",
     "odometer",
@@ -16,12 +16,12 @@
   "typings": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jmandreslopez/ng2-odometer.git"
+    "url": "https://github.com/jxh384/ng2-odometer.git"
   },
   "bugs": {
-    "url": "https://github.com/jmandreslopez/ng2-odometer/issues"
+    "url": "https://github.com/jxh384/ng2-odometer/issues"
   },
-  "homepage": "https://github.com/jmandreslopez/ng2-odometer#readme",
+  "homepage": "https://github.com/jxh384/ng2-odometer#readme",
   "scripts": {
     "rimraf": "rimraf",
     "lint": "tslint ./*.ts ./src/{,*/}*.ts",
@@ -96,7 +96,7 @@
     "reflect-metadata": "^0.1.3",
     "require-dir": "0.3.1",
     "rimraf": "~2.5.4",
-    "rxjs": "^5.0.3",
+    "rxjs": "6.3.2",
     "sass-loader": "^5.0.0",
     "semantic-release": "^6.3.2",
     "style-loader": "^0.13.1",
