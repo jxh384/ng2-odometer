@@ -1,9 +1,9 @@
 {
   "name": "ng2-odometer-tiny",
-  "description": "Odometer for Angular2 - Only train-station theme is supported; also not downloading fonts from google",
+  "description": "Odometer for Angular2 - train-station theme only; no downloading fonts from google",
   "author": "Jose Andres <jmandreslopez@gmail.com>",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "hubspot",
     "odometer",

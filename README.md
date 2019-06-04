@@ -1,11 +1,15 @@
 # ng2-odometer [![npm version](https://img.shields.io/npm/v/ng2-odometer.svg?style=flat)](https://www.npmjs.com/package/ng2-odometer) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
+Based on [Odometer for Angular2] (https://github.com/jmandreslopez/ng2-odometer); the only differences are:
+* Theme configuration not supported/allowed; default and only theme is train station.
+* No downloading font(s) from google.
+
 Odometer for Angular2 that wraps HubSpot's Odometer [http://github.hubspot.com/odometer/docs/welcome/](http://github.hubspot.com/odometer/docs/welcome/)
 
 ## Quick Start
 
 ```
-npm install ng2-odometer --save
+npm install ng2-odometer-tiny --save
 ```
 
 ## Table of contents
@@ -19,7 +23,7 @@ npm install ng2-odometer --save
 
 First you need to install the npm module:
 ```sh
-npm install ng2-odometer --save
+npm install ng2-odometer-tiny --save
 ```
 
 Then add the `Ng2OdometerModule` to the imports array of your application module.
@@ -97,7 +101,6 @@ The component accepts either a `[config]="{ ... }"` attribute with an object wit
 | --------------| --------- | ----------- |-------------- |
 | `animation`   | string    | 'slide'     | Animation effect type. <br> Options: 'slide', 'count'
 | `format`      | string    | '(,ddd)'    | Format to apply on the numbers. <br> Format - Example: <br> (,ddd) - 12,345,678 <br> (,ddd).dd - 12,345,678.09 <br> (.ddd),dd - 12.345.678,09 <br> ( ddd),dd - 12 345 678,09 <br> d         -  12345678
-| `theme`       | string    | 'default'   | The desired theme. <br> Options: 'default', 'minima', 'digital', 'car', 'plaza', 'slot-machine', 'train-station'
 | `value`       | number    | 0           | Initial value of the odometer
 | `auto`        | boolean   | true        | Setup auto or manual mode for the odometer
 
@@ -115,7 +118,7 @@ The component accepts either a `[config]="{ ... }"` attribute with an object wit
         <ng2-odometer 
             [number]="1000" 
             [observable]="observable"
-            [config]="{ animation: 'count', format: 'd', theme: 'car', value: 50, auto: false }">
+            [config]="{ animation: 'count', format: 'd', value: 50, auto: false }">
         </ng2-odometer>
         <!-- Further content here -->
 
@@ -124,7 +127,6 @@ The component accepts either a `[config]="{ ... }"` attribute with an object wit
             [observable]="observable"
             [animation]="'count'"
             [format]="'d'"
-            [theme]="'car'"
             [value]="0",
             [auto]="false">
         </ng2-odometer>
@@ -136,7 +138,6 @@ export class MainElementComponent {
     public config = {
         animation: 'count', 
         format: 'd', 
-        theme: 'car', 
         value: 50,
         auto: true,
     }

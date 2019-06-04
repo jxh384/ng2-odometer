@@ -98,7 +98,7 @@ export const TRAIN_STATION_THEME = `
     }
     .odometer.odometer-auto-theme,
     .odometer.odometer-theme-train-station {
-        font-family: Gisha, Verdana, sans-serif;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     }
     .odometer.odometer-auto-theme .odometer-digit,
     .odometer.odometer-theme-train-station .odometer-digit {
